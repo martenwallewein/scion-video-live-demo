@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import VideoJSPlayer from './VideoPlayer';
+import { ScionHeader } from './ScionHeader';
+
+const sources = [{
+  src: "http://49.12.6.5:8090/streamwebm",
+  type: "video/webm",
+  label: "SD"
+}];
 
 function App() {
+
+  const [selectedSource, setSelectedSource] = useState(sources[0]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ScionHeader source={selectedSource}/>
+      <VideoJSPlayer source={selectedSource}/>
     </div>
   );
 }

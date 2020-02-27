@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.VideoPlayer {
+  max-width: 1248px;
+  margin: auto;
+}
